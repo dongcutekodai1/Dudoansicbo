@@ -216,7 +216,7 @@ async function fetchDataWithRetry(url, retries = 5, delay = 2000) {
 }
 
 // API chính
-app.get('/concac/ditme/lxk', async (req, res) => {
+app.get('/concac/ditme/trdong', async (req, res) => {
     let currentData = null;
     let cachedHistoricalData = historicalDataCache.get("full_history");
     if (cachedHistoricalData) {
@@ -227,17 +227,17 @@ app.get('/concac/ditme/lxk', async (req, res) => {
         const data = await fetchDataWithRetry(SUNWIN_API_URL);
         currentData = data;
 
-        if (currentData && currentData.Phien && currentData.Ket_qua) {
-            const normalizedData = {
-                phien: currentData.Phien,
-                ket_qua: currentData.Ket_qua,
-                tong: currentData.Tong,
-                xuc_xac_1: currentData.Xuc_xac_1,
-                xuc_xac_2: currentData.Xuc_xac_2,
-                xuc_xac_3: currentData.Xuc_xac_3
-            };
-            historyManager.addSession(normalizedData);
-            historicalDataCache.set("full_history", historyManager.getHistory());
+        if (currentData && currentData.phien && currentData.ket_qua) {
+    const normalizedData = {
+        phien: currentData.phien,
+        ket_qua: currentData.ket_qua,
+        tong: currentData.tong_diem,
+        xuc_xac_1: currentData.xuc_xac[0] || 0,
+        xuc_xac_2: currentData.xuc_xac[1] || 0,
+        xuc_xac_3: currentData.xuc_xac[2] || 0
+    };
+    historyManager.addSession(normalizedData);
+    historicalDataCache.set("full_history", historyManager.getHistory());
         }
 
         const lastSession = historyManager.getHistory().slice(-1)[0];
