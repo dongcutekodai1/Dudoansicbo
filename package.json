@@ -1,21 +1,30 @@
 {
-  "name": "hitclub-history-api",
+  "name": "sicbo-predictor",
   "version": "1.0.0",
-  "description": "API thu thập lịch sử từ hitclub-history-hdxapipro",
-  "main": "index.js",
+  "description": "Server dự đoán kết quả Sicbo từ SUNWIN API",
+  "main": "src/index1.js",
   "scripts": {
-    "start": "node index1.js"
+    "start": "node src/index1.js",
+    "dev": "nodemon src/index1.js"
   },
   "keywords": [
-    "api",
+    "sicbo",
+    "prediction",
     "express",
     "axios",
-    "hitclub"
+    "node-cache"
   ],
-  "author": "your-name",
+  "author": "YourName",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.6.0",
-    "express": "^4.18.2"
+    "axios": "^1.5.0",
+    "express": "^4.18.2",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
