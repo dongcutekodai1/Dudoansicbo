@@ -258,7 +258,7 @@ app.get('/concac/ditme/lxk', async (req, res) => {
         const { du_doan, do_tin_cay, giai_thich } = predictionEngine.predict();
 
         const result = {
-            id: "@cskhtoollxk",
+            id: "@truongdong1920",
             phien_truoc: lastSession.phien,
             ket_qua: lastSession.ket_qua,
             xuc_xac: [lastSession.xuc_xac_1, lastSession.xuc_xac_2, lastSession.xuc_xac_3],
