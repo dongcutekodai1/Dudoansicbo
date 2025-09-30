@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const historicalDataCache = new NodeCache({ stdTTL: 3600, checkperiod: 120 });
 
 // URL API gốc
-const SUNWIN_API_URL = 'https://sicbosun-6esb.onrender.com/api/sicbosun';
+const SUNWIN_API_URL = 'https://sicbosun-8d67.onrender.com/api/sunwin/sicbo';
 
 // Quản lý lịch sử
 class HistoricalDataManager {
